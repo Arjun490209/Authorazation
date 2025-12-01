@@ -1,3 +1,4 @@
+import { API } from "@/App";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
@@ -31,7 +32,7 @@ const ChangePassword = () => {
       setIsLoading(true);
 
       const response = await axios.post(
-        `http://localhost:5000/user/change-password/${email}`,
+        `${API}/user/change-password/${email}`,
         { newPassword, confirmPassword },
         {
           headers: {

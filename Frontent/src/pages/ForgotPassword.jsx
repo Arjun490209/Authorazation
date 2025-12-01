@@ -1,3 +1,4 @@
+import { API } from "@/App";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,7 +28,7 @@ const ForgotPassword = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/user/forgot-password",
+        `${API}/user/forgot-password`,
         { email }
       );
 

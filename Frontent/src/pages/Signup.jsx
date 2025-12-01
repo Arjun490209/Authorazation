@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
+import { API } from "@/App";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const Signup = () => {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        "http://localhost:5000/user/register",
+        `${API}/user/register`,
         formData,
         {
           headers: {

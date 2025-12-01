@@ -13,14 +13,15 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import axios from "axios";
 import { toast } from "sonner";
+import { API } from "@/App";
 
-const Navbar = () => {
+const Navbar = () => {  
   const {user, setUser} = getData()
   const accessToken = localStorage.getItem("accessToken");
 
   const logoutHandler = async() => {
     try {
-      const response = await axios.post('http://localhost:5000/user/logout', {},{
+      const response = await axios.post(`${API}/user/logout`, {},{
         headers: {
           Authorization: `Bearer ${accessToken}`
         },

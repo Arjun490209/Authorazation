@@ -12,7 +12,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import VerifyOTP from "./pages/VerifyOTP";
 import ChangePassword from "./pages/ChangePassword";
 
-
+export const API = import.meta.env.VITE_API_URL
 const router = createBrowserRouter([
   {
     path: "/",

@@ -1,3 +1,4 @@
+import { API } from "@/App";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
@@ -47,7 +48,7 @@ const VerifyOTP = () => {
       setError("");
 
       const response = await axios.post(
-        `http://localhost:5000/user/verify-otp/${email}`,
+        `${API}/user/verify-otp/${email}`,
         { otp: finalOtp }
       );
 
