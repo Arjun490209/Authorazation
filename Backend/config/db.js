@@ -11,21 +11,21 @@
 
 // export default connectDB
 
-
 import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    const mongoURL = process.env.MONGO_URL; // should be like mongodb+srv://user:pass@cluster0.mongodb.net/notes
+    const mongoURL = process.env.MONGO_URL;
     await mongoose.connect(mongoURL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      dbName: "notes"
     });
+
     console.log("MongoDB connected successfully 🚀");
   } catch (error) {
-    console.error("MongoDB connection error:", error);
+    console.error("MongoDB connection error:", error.message);
   }
 };
 
 export default connectDB;
+
 
