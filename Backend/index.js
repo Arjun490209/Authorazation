@@ -12,7 +12,7 @@ app.use(express.json())
 // ! cors set
 const allowedOrigins = [
   "http://localhost:5173",                  // Local dev
-  "https://authorazation-jbh6.vercel.app", // Production frontend
+  "https://authorazation.onrender.com", // Production frontend
 ];
 
 app.use(cors({
